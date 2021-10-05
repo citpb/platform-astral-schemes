@@ -1,0 +1,21 @@
+@startuml
+
+class "Журнал регистрации абонентов" as MasterClass {
+..Пользовательское действия..
+{method}+P_UDO_PLORA_INSERT
+{method}+P_UDO_PLORA_VIEW
+{method}+P_UDO_PLORA_DELETE
+{method}+P_UDO_PLORA_SEND
+..Методы транспорта..
+{method}+P_UDO_PLORA_FINFRM
+}
+
+class "Регистрация сотрудников" as SpecClass1
+class "Регистрация направлений" as SpecClass2
+class "Сетевые задания" as SpecClass3
+
+MasterClass "1" *-- "много" SpecClass1
+MasterClass "1" *-- "много" SpecClass2
+MasterClass "1" *-- "много" SpecClass3
+
+@enduml
