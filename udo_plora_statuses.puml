@@ -1,0 +1,29 @@
+@startuml
+
+state "0 – Формируется" as State0
+state "1 – Разбор сертификатов" as State1
+state "2 - Ожидает отправки" as State2
+state "3 - Поставлен в очередь" as State3
+state "4 - Отправлен" as State4
+state "5 - Получен ответ" as State5
+state "6 - Ошибка" as State6
+
+State0 : 0 – Формируется
+State1 : 1 – Разбор сертификатов
+State2 : 2 - Ожидает отправки
+State3 : 3 - Поставлен в очередь
+State4 : 4 - Отправлен
+State5 : 5 - Получен ответ
+State6 : 6 - Ошибка
+
+[*] --> State0
+State0 -> State1
+State1 -> State2
+State2 -> State3
+State3 -> State4
+State2 -> State6
+State4 -> State5
+State4 -> State6
+State1 --> [*]
+
+@enduml
