@@ -1,4 +1,5 @@
 @startuml
+hide empty description
 
 state "0 – Формируется" as State0
 state "1 – Разбор сертификатов" as State1
