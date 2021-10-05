@@ -24,6 +24,7 @@ State3 -> State4
 State2 -> State6
 State4 -> State5
 State4 -> State6
-State1 --> [*]
+State5 --> [*]
+State6 --> [*]
 
 @enduml
