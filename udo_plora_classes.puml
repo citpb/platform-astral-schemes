@@ -24,7 +24,11 @@ class "Регистрация направлений" as SpecClass2 {
 {method}+Удалить (P_UDO_PLORAD_DELETE)
 }
 
-class "Сетевые задания" as SpecClass3
+class "Сетевые задания" as SpecClass3 {
+..Пользовательские действия..
+{method}+Просмотр (P_UDO_PLORAN_VIEW)
+{method}+Результаты (P_UDO_PLORAN_RES)
+}
 
 MasterClass "1" *-- "много" SpecClass1
 MasterClass "1" *-- "много" SpecClass2
