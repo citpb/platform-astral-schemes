@@ -1,17 +1,29 @@
 @startuml
 
 class "Журнал регистрации абонентов" as MasterClass {
-..Пользовательское действия..
-{method}+P_UDO_PLORA_INSERT
-{method}+P_UDO_PLORA_VIEW
-{method}+P_UDO_PLORA_DELETE
-{method}+P_UDO_PLORA_SEND
+..Пользовательские действия..
+{method}+Добавить (P_UDO_PLORA_INSERT)
+{method}+Просмотр (P_UDO_PLORA_VIEW)
+{method}+Удалить (P_UDO_PLORA_DELETE)
+{method}+Отправить (P_UDO_PLORA_SEND)
 ..Методы транспорта..
-{method}+P_UDO_PLORA_FINFRM
+{method}+Завершить формирование P_UDO_PLORA_FINFRM
 }
 
-class "Регистрация сотрудников" as SpecClass1
-class "Регистрация направлений" as SpecClass2
+class "Регистрация сотрудников" as SpecClass1 {
+..Пользовательские действия..
+{method}+Добавить (P_UDO_PLORAE_INSERT)
+{method}+Просмотр (P_UDO_PLORAE_VIEW)
+{method}+Удалить (P_UDO_PLORAE_DELETE)
+}
+
+class "Регистрация направлений" as SpecClass2 {
+..Пользовательские действия..
+{method}+Добавить (P_UDO_PLORAD_INSERT)
+{method}+Просмотр (P_UDO_PLORAD_VIEW)
+{method}+Удалить (P_UDO_PLORAD_DELETE)
+}
+
 class "Сетевые задания" as SpecClass3
 
 MasterClass "1" *-- "много" SpecClass1
