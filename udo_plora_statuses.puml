@@ -1,13 +1,14 @@
 @startuml
 hide empty description
-
+state "Успешный ход регистрации" as Saccess #LightGray;line.dotted;line:LightGray {
 state "0 – Формирование" as State0
 state "1 – Разбор сертификатов" as State1
 state "2 - Сертификат в очереди" as State2
 state "3 - Заявление в очереди" as State3
 state "4 - Заявление отправлено" as State4
 state "5 - Получен ответ" as State5
-state "Ошибка" as Error {
+}
+state "Ошибка" as Error #LightGray;line.dotted;line:LightGray {
 state "6 – Ошибка разбора сертификатов" as State6
 state "7 – Ошибка отправки сертификата" as State7
 state "8 – Ошибка отправки заявления" as State8
@@ -30,7 +31,11 @@ State4 -> State5
 State4 --> State9
 
 
-Error --> [*]
+State6 --> [*]
+State7 --> [*]
+State8 --> [*]
+State9 --> [*]
+
 State5 --> [*]
 
 @enduml
