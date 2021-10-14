@@ -10,7 +10,7 @@ state "Успешный ход регистрации" as Saccess #LightGray;lin
     state "6 - Заявление отправлено" as State6
     state "7 - Получен ответ" as State7
 }
-state "Ошибка" as Error #LightGray;line.dotted;line:LightGray {
+state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
     state "8 - Ошибка разбора сертификата" as State8
     state "9 - Ошибка постановки сертификата в очередь" as State9
     state "10 - Ошибка отправки сертификата" as State10
