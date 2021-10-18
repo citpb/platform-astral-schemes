@@ -3,9 +3,9 @@ hide empty description
 state "Успешный ход регистрации" as Saccess #LightGray;line.dotted;line:LightGray {
     state "0 – Формирование" as State0
     state "1 – Разбор сертификата" as State1
-    state "2 - Готов к отправке" as State2
+    state "2 - Постановка сертификата в очередь" as State2
     state "3 - Сертификат в очереди" as State3
-    state "4 - Сертификат отправлен" as State4
+    state "4 - Постановка заявления в очередь" as State4
     state "5 - Заявление в очереди" as State5
     state "6 - Заявление отправлено" as State6
     state "7 - Получен ответ" as State7
@@ -22,6 +22,7 @@ state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
 [*] --> State0
 State0 -> State1
 State0 -> State2
+State0 -> State4
 
 State1 -> State2
 State1 --> State8
@@ -37,9 +38,11 @@ State4 --> State11
 
 State5 -> State6
 State5 --> State12
+State12 --> State7
 
 State6 -> State7
 State6 --> State13
+State13 --> State7
 
 State8  --> [*]
 State9  --> [*]
