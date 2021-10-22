@@ -1,9 +1,9 @@
 @startuml
 |Раздел Журнал регистрации абонента|
 start
-:Добавить Заявление на регистрацию абонента (P_UDO_PLORA_INSERT);
-:Добавить Сотрудника (P_UDO_PLORAE_INSERT);
-:Добавить Направление (P_UDO_PLORAD_INSERT);
+:Добавить заявление (P_UDO_PLORA_INSERT);
+:Добавить сотрудника (P_UDO_PLORAE_INSERT);
+:Добавить направление (P_UDO_PLORAD_INSERT);
 :Отправить (P_UDO_PLORA_SEND); 
 |#AntiqueWhite|Сетевые задания|
 :Добавить сертификат в Очередь отправки файла (P_UDO_PLOFO_INSERT);
