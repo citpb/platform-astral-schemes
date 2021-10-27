@@ -1,0 +1,21 @@
+@startuml
+
+class "Абоненты" as MasterClass {
+..Пользовательские действия..
+{method}+Просмотр (P_UDO_PLOUS_VIEW)
+}
+
+class "Cотрудники абонента" as SpecClass1 {
+..Пользовательские действия..
+{method}+Просмотр (P_UDO_PLORAE_VIEW)
+}
+
+class "Направления абонента" as SpecClass2 {
+..Пользовательские действия..
+{method}+Просмотр (P_UDO_PLORAD_VIEW)
+}
+
+MasterClass "1" *-- "много" SpecClass1
+MasterClass "1" *-- "много" SpecClass2
+
+@enduml
