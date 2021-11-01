@@ -3,16 +3,23 @@
 class "Абоненты" as MasterClass {
 ..Пользовательские действия..
 {method}+Просмотр (P_UDO_PLOUS_VIEW)
+..Методы API..
+{method}+Подключить абонента (P_UDO_PLOUS_CONN)
+{method}+Изменить абонента (P_UDO_EDOUS_EDT)
+{method}+Отключить абонента (P_UDO_EDOUS_DIS)
 }
 
 class "Cотрудники абонента" as SpecClass1 {
 ..Пользовательские действия..
-{method}+Просмотр (P_UDO_PLORAE_VIEW)
+{method}+Просмотр (P_UDO_PLOUSE_VIEW)
 }
 
 class "Направления абонента" as SpecClass2 {
 ..Пользовательские действия..
-{method}+Просмотр (P_UDO_PLORAD_VIEW)
+{method}+Просмотр (P_UDO_PLOUSD_VIEW)
+{method}+Доверенность (P_UDO_PLOUSD_DOV)
+{method}+Удалить доверенность (P_UDO_PLOUSD_DOV_CLEAR)
+{method}+Сделать основным (P_UDO_PLOUSD_MDF_MAIN)
 }
 
 MasterClass "1" *-- "много" SpecClass1
