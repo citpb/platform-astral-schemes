@@ -2,7 +2,7 @@
 
 class "Журнал регистрации абонентов" as MasterClass {
 ..Пользовательские действия..
-{method}+Добавить (P_UDO_PLORA_INSERT)
+{method}+Добавить заявление (P_UDO_PLORA_INSERT)
 {method}+Просмотр (P_UDO_PLORA_VIEW)
 {method}+Удалить (P_UDO_PLORA_DELETE)
 {method}+Отправить (P_UDO_PLORA_SEND)
@@ -12,16 +12,19 @@ class "Журнал регистрации абонентов" as MasterClass {
 
 class "Регистрация сотрудников" as SpecClass1 {
 ..Пользовательские действия..
-{method}+Добавить (P_UDO_PLORAE_INSERT)
+{method}+Добавить сотрудника (P_UDO_PLORAE_FRM)
 {method}+Просмотр (P_UDO_PLORAE_VIEW)
-{method}+Удалить (P_UDO_PLORAE_DELETE)
+{method}+Удалить сотрудника (P_UDO_PLORAE_DELETE)
+..Методы транспорта..
+{method}+Добавить сертификат P_UDO_PLORAE_CRCERT
+{method}+Ошибка разбора сертификата P_UDO_PLORAE_ERR_CERT
 }
 
 class "Регистрация направлений" as SpecClass2 {
 ..Пользовательские действия..
-{method}+Добавить (P_UDO_PLORAD_INSERT)
+{method}+Добавить направление (P_UDO_PLORAD_CON)
 {method}+Просмотр (P_UDO_PLORAD_VIEW)
-{method}+Удалить (P_UDO_PLORAD_DELETE)
+{method}+Исправить направление (P_UDO_PLORAD_UPDATE)
 }
 
 class "Сетевые задания" as SpecClass3 {
