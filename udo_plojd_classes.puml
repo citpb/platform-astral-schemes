@@ -1,0 +1,40 @@
+@startuml
+
+ class "Журнал передачи отчётов" as MasterClass {
+ ..Пользовательские действия..
+ {method}+Добавить заявление (P_UDO_PLOJD_INSERT)
+ {method}+Просмотр (P_UDO_PLOJD_VIEW)
+ {method}+Удалить (P_UDO_PLOJD_DELETE)
+ {method}+Отправить (P_UDO_PLOJD_SEND)
+ ..Методы транспорта..
+ {method}+Завершить формирование P_UDO_PLOJD_FINFRM
+ }
+
+ class "Файлы отчётов" as SpecClass1 {
+ ..Пользовательские действия..
+ {method}+Добавить сотрудника (P_UDO_PLOJDF_FRM)
+ {method}+Просмотр (P_UDO_PLOJDF_VIEW)
+ {method}+Удалить сотрудника (P_UDO_PLOJDF_DELETE)
+ ..Методы транспорта..
+ {method}+Добавить сертификат P_UDO_PLOJDF_CRCERT
+ {method}+Ошибка разбора сертификата P_UDO_PLOJDF_ERR_CERT
+ }
+
+ class "Подписи файлов отчётов" as SpecClass2 {
+ ..Пользовательские действия..
+ {method}+Добавить направление (P_UDO_PLOJDF_CON)
+ {method}+Просмотр (P_UDO_PLOJDF_VIEW)
+ {method}+Исправить направление (P_UDO_PLOJDF_UPDATE)
+ }
+
+ class "Сетевые задания" as SpecClass3 {
+ ..Пользовательские действия..
+ {method}+Просмотр (P_UDO_PLOJDN_VIEW)
+ {method}+Результаты (P_UDO_PLOJDN_RES)
+ }
+
+ MasterClass "1" *-- "много" SpecClass1
+ MasterClass "1" *-- "много" SpecClass2
+ MasterClass "1" *-- "много" SpecClass3
+
+ @enduml
