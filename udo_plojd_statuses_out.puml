@@ -1,0 +1,85 @@
+@startuml
+scale 80 width
+scale 240 height
+
+hide empty description
+state "Успешный ход передачи отчётов" as Saccess #LightGray;line.dotted;line:LightGray {
+    state "0 – Формирование" as State0
+    state "1 - Постановка\nдокументов\nв очередь" as State1
+    state "2 - Документы\nв очереди" as State2
+    state "3 - Постановка\nотчёта\nв очередь" as State3
+    state "4 - Отчёт\nв очереди" as State4
+    state "5 - Отчёт\nотправлен в СПО" as State5
+    state "6 - Требуется\nподписать\nдокументы" as State6
+    state "7 - Постановка\nподписей\nв очередь" as State7
+    state "8 - Подписи\nв очереди" as State8
+    state "9 - Постановка\nсобытия\nподписания\nв очередь" as State9
+    state "10 - Событие\nподписания\nв очереди" as State10
+    state "11 - Событие\nподписания\nотправлено в СПО" as State11   
+    state "12 - Отчёт\nотправлен\nв КО" as State12
+}
+state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
+    state "13 - Ошибка\nпостановки\nдокументов\nв очередь" as State13
+    state "14 - Ошибка\nотправки\nдокументов\nв СПО" as State14
+    state "15 - Ошибка\nпостановки\nотчёта\nв очередь" as State15
+    state "16 - Ошибка\nотправки\nотчёта\nв СПО" as State16  
+    state "17 - Ошибка\nполучения\nтребования\nподписать\nиз СПО" as State17
+    state "18 - Ошибка\nподписания" as State18
+    state "19 - Ошибка\nпостановки\nподписей\nв очередь" as State19
+    state "20 - Ошибка\nотправки\nподписей\nв СПО" as State20
+    state "21 - Ошибка\nпостановки\nсобытия\nподписания\nв очередь" as State21
+    state "22 - Ошибка\nотправки\nсобытия\nподписания\nв СПО" as State22
+    state "23 - Ошибка\nотправки\nв КО" as State23
+}
+
+[*] --> State0
+State0 -> State1
+
+State1 -> State2
+State1 --> State13
+
+State2 -> State3
+State2 --> State14
+
+State3 -> State4
+State3 --> State15
+
+State4 -> State5
+State4 --> State16
+
+State5 -> State6
+State5 --> State17
+
+State6 -> State7
+State6 --> State18
+
+State7 -> State8
+State7 --> State19
+
+State8 -> State9
+State8 --> State20
+
+State9 -> State10
+State9 --> State21
+
+State10 -> State11
+State10 --> State22
+
+State11 -> State12
+State11 --> State23
+
+State13  --> [*]
+State14  --> [*]
+State15 --> [*]
+State16 --> [*]
+State17 --> [*]
+State18 --> [*]
+State19  --> [*]
+State20  --> [*]
+State21 --> [*]
+State22 --> [*]
+State23 --> [*]
+
+State12 --> [*]
+
+@enduml
