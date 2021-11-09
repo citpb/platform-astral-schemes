@@ -1,6 +1,6 @@
 @startuml
-scale 80 width
-scale 240 height
+scale 100 width
+scale 260 height
 
 hide empty description
 state "Успешный ход передачи отчётов" as Saccess #LightGray;line.dotted;line:LightGray {
