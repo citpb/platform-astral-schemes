@@ -1,0 +1,82 @@
+@startuml
+scale 100 width
+scale 260 height
+
+hide empty description
+state "Успешный ход получения входящих документов от контролирующих органов" as Saccess #LightGray;line.dotted;line:LightGray {
+    state "0 – Получено\nсобытие\nдешифрования" as State0
+    state "1 - Постановка\nшифрованных\nдокументов\nна получение" as State1
+    state "2 - Шифрованные\nдокументы\nв очереди" as State2
+    state "3 - Требуется\nдешифровать\nдокументы" as State3
+    state "4 - Постановка\nрасшифрованных\nдокументов\nв очередь" as State4
+    state "5 - Расшифрованные\nдокументы\nв очереди" as State5    
+    state "6 - Постановка\nсобытия\nрезультата\nдешифрования\nв очередь" as State6 
+    state "7 - Событие\nрезультата\nдешифрования\nв очереди" as State7
+    state "8 - Событие\nрезультата\nдешифрования\nотправлено в СПО" as State8
+    state "9 – Получено\nсобытие\nс исходными\nдокументами" as State9  
+    state "10 - Постановка\nисходных\nдокументов\nна получение" as State10
+    state "11 - Исходные\nдокументы\nв очереди\nна получение" as State11
+    state "12 - Входящие\nдокументы\nполучены" as State12
+}
+state "Ошибки при получении входящих документов от контролирующих органов" as Errors #LightGray;line.dotted;line:LightGray {
+    state "13 - Ошибка\nпостановки\nшифрованных\nдокументов\nна получение" as State13
+    state "14 - Ошибка\nполучения\nшифрованных\nдокументов" as State14
+    state "15 - Ошибка\nдешифрования\nдокументов" as State15
+    state "16 - Ошибка\nпостановки\nрасшифрованных\nдокументов\nв очередь" as State16
+    state "17 - Ошибка\nотправки\nрасшифрованных\nдокументов\nв СПО" as State17
+    state "18 - Ошибка\nпостановки\nсобытия\nрезультата\nдешифрования\nв очередь" as State18
+    state "19 - Ошибка\nотправки\nсобытия\nрезультата\nдешифрования\nв СПО" as State19
+    state "20 - Ошибка\nполучения\nсобытия\nс исходными\nдокументами" as State20
+    state "21 - Ошибка\nпостановки\nисходных\nдокументов\nна получение\nв очередь" as State21
+    state "22 - Ошибка\nполучения\nисходных\nдокументов\nиз СПО" as State22
+}
+
+[*] --> State0
+State0 -> State1
+
+State1 -> State2
+State1 --> State13
+
+State2 -> State3
+State2 --> State14
+
+State3 -> State4
+State3 --> State15
+
+State4 -> State5
+State4 --> State16
+
+State5 -> State6
+State5 --> State17
+
+State6 -> State7
+State6 --> State18
+
+State7 -> State8
+State7 --> State19
+
+State8 -> State9
+State8 --> State20
+
+State9 -> State10
+
+State10 -> State11
+State10 --> State21
+
+State11 -> State12
+State11 --> State22
+
+State13  --> [*]
+State14  --> [*]
+State15 --> [*]
+State16 --> [*]
+State17 --> [*]
+State18 --> [*]
+State19  --> [*]
+State20  --> [*]
+State21 --> [*]
+State22 --> [*]
+
+State12 --> [*]
+
+@enduml
