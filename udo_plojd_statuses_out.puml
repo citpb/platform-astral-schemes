@@ -36,7 +36,7 @@ state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
     state "28 - Ошибка\nотправки\nподписей\nв СПО" as State28
     state "29 - Ошибка\nпостановки\nсобытия\nподписания\nв очередь" as State29
     state "30 - Ошибка\nотправки\nсобытия\nподписания\nв СПО" as State30
-    state "31 - Ошибка\nотправки\nв КО" as State31 
+    state "31 - Ошибка\nотправки\nв КО" as State31
     state "32 - Ошибка\nпостановки\nзапроса\nпечатных форм\nв очередь" as State32
     state "33 - Ошибка\nотправки\nзапроса\nпечатных форм\nв сервис отчетности" as State33
     state "34 – Ошибка\nполучения\nсобытия\nна получение\nпечатной формы" as State34
