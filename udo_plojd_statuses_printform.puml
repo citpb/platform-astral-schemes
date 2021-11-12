@@ -1,0 +1,50 @@
+@startuml
+scale 100 width
+scale 260 height
+
+hide empty description
+state "Успешный ход передачи отчётов" as Saccess #LightGray;line.dotted;line:LightGray {
+    state "1 - Постановка\nзапроса\nпечатных форм\nв очередь" as State1
+    state "2 - Запрос\nпечатных форм\nв очереди" as State2
+    state "3 - Запрос\nпечатных форм\nотправлен\nв сервис отчетности" as State3
+    state "4 – Получено\nсобытие\nна получение\nпечатной формы" as State4
+    state "5 - Постановка\nпечатных форм\nна получение" as State5
+    state "6 - Печатные\nформы\nв очереди\nна получение" as State6
+    state "7 - Печатные\nформы\nполучены" as State7
+}
+state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
+    state "8 - Ошибка\nпостановки\nзапроса\nпечатных форм\nв очередь" as State8
+    state "9 - Ошибка\nотправки\nзапроса\nпечатных форм\nв сервис отчетности" as State9
+    state "10 – Ошибка\nполучения\nсобытия\nна получение\nпечатной формы" as State10
+    state "11 - Ошибка\nпостановки\nпечатных форм\nна получение" as State11
+    state "12 - Ошибка\nполучения\nпечатных форм" as State12
+}
+
+[*] --> State1
+
+State1 -> State2
+State1 --> State8
+
+State2 -> State3
+State2 --> State9
+
+State3 -> State4
+State3 -> State10
+
+State4 -> State5
+
+State5 -> State6
+State5 --> State11
+
+State6 -> State7
+State6 --> State12
+
+State8 --> [*]
+State9 --> [*]
+State10 --> [*]
+State11 --> [*]
+State12 --> [*]
+
+State7 --> [*]
+
+@enduml
