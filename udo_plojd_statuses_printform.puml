@@ -1,8 +1,6 @@
 @startuml
-scale 100 width
-scale 260 height
-
 hide empty description
+
 state "Успешный ход передачи отчётов" as Saccess #LightGray;line.dotted;line:LightGray {
     state "1 - Постановка\nзапроса\nпечатных форм\nв очередь" as State1
     state "2 - Запрос\nпечатных форм\nв очереди" as State2
