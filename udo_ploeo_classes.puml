@@ -6,7 +6,7 @@
  {method}+Просмотр (P_UDO_PLOEO_VIEW)
  ..Методы транспорта..
  {method}+Обработать событие окончания отправки (P_UDO_PLOEO_EXEC)
-  ..Методы..
+ ..Методы..
  {method}+Обновить статус задания (P_UDO_PLOEOR_MDF_STATUS)
  }
 
