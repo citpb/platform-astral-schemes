@@ -1,0 +1,29 @@
+@startuml
+
+ class "Очередь заданий исходящих событий" as MasterClass {
+ ..Пользовательские действия..
+ {method}+Добавить (P_UDO_PLOEO_INSERT)
+ {method}+Просмотр (P_UDO_PLOEO_VIEW)
+ ..Методы транспорта..
+ {method}+Обработать событие окончания отправки (P_UDO_PLOEO_EXEC)
+  ..Методы..
+ {method}+Обновить статус задания (P_UDO_PLOEOR_MDF_STATUS)
+ }
+
+ class "Результаты заданий исходящих событий" as SpecClass1 {
+ ..Пользовательские действия..
+ {method}+Просмотр (P_UDO_PLOEOR_VIEW)
+ ..Методы транспорта..
+ {method}+Добавить результат задания (P_UDO_PLOEOR_RESP_ADD)
+ }
+
+ class "Журнал транспорта заданий исходящих событий" as SpecClass2 {
+ ..Пользовательские действия..
+ {method}+Метод добавить событие (P_UDO_PLOEOJT_ADD)
+ {method}+Просмотр (P_UDO_PLOEOJT_VIEW)
+ }
+
+ MasterClass "1" *-- "много" SpecClass1
+ SpecClass1 "1" *-- "много" SpecClass2
+
+ @enduml
