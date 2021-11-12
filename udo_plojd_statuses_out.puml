@@ -17,105 +17,69 @@ state "Успешный ход передачи отчётов" as Saccess #Ligh
     state "11 - Событие\nподписания\nв очереди" as State11
     state "12 - Событие\nподписания\nотправлено в СПО" as State12  
     state "13 - Отчёт\nотправлен\nв КО" as State13
-    state "14 - Постановка\nзапроса\nпечатных форм\nв очередь" as State14
-    state "15 - Запрос\nпечатных форм\nв очереди" as State15
-    state "16 - Запрос\nпечатных форм\nотправлен\nв сервис отчетности" as State16
-    state "17 – Получено\nсобытие\nна получение\nпечатной формы" as State17
-    state "18 - Постановка\nпечатных форм\nна получение" as State18
-    state "19 - Печатные\nформы\nв очереди\nна получение" as State19
-    state "20 - Печатные\nформы\nполучены" as State20
 }
 state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
-    state "21 - Ошибка\nпостановки\nдокументов\nв очередь" as State21
-    state "22 - Ошибка\nотправки\nдокументов\nв СПО" as State22
-    state "23 - Ошибка\nпостановки\nотчёта\nв очередь" as State23
-    state "24 - Ошибка\nотправки\nотчёта\nв СПО" as State24
-    state "25 - Ошибка\nполучения\nтребования\nподписать\nиз СПО" as State25
-    state "26 - Ошибка\nподписания" as State26
-    state "27 - Ошибка\nпостановки\nподписей\nв очередь" as State27
-    state "28 - Ошибка\nотправки\nподписей\nв СПО" as State28
-    state "29 - Ошибка\nпостановки\nсобытия\nподписания\nв очередь" as State29
-    state "30 - Ошибка\nотправки\nсобытия\nподписания\nв СПО" as State30
-    state "31 - Ошибка\nотправки\nв КО" as State31
-    state "32 - Ошибка\nпостановки\nзапроса\nпечатных форм\nв очередь" as State32
-    state "33 - Ошибка\nотправки\nзапроса\nпечатных форм\nв сервис отчетности" as State33
-    state "34 – Ошибка\nполучения\nсобытия\nна получение\nпечатной формы" as State34
-    state "35 - Ошибка\nпостановки\nпечатных форм\nна получение" as State35
-    state "36 - Ошибка\nполучения\nпечатных форм" as State36
+    state "14 - Ошибка\nпостановки\nдокументов\nв очередь" as State14
+    state "15 - Ошибка\nотправки\nдокументов\nв СПО" as State15
+    state "16 - Ошибка\nпостановки\nотчёта\nв очередь" as State16
+    state "17 - Ошибка\nотправки\nотчёта\nв СПО" as State17
+    state "18 - Ошибка\nполучения\nтребования\nподписать\nиз СПО" as State18
+    state "19 - Ошибка\nподписания" as State19
+    state "20 - Ошибка\nпостановки\nподписей\nв очередь" as State20
+    state "21 - Ошибка\nотправки\nподписей\nв СПО" as State21
+    state "22 - Ошибка\nпостановки\nсобытия\nподписания\nв очередь" as State22
+    state "23 - Ошибка\nотправки\nсобытия\nподписания\nв СПО" as State23
+    state "24 - Ошибка\nотправки\nв КО" as State24
 }
 
 [*] --> State1
 State1 -> State2
 
 State2 -> State3
-State2 --> State21
+State2 --> State14
 
 State3 -> State4
-State3 --> State22
+State3 --> State15
 
 State4 -> State5
-State4 --> State23
+State4 --> State16
 
 State5 -> State6
-State5 --> State24
+State5 --> State17
 
 State6 -> State7
-State6 --> State25
+State6 --> State18
 
 State7 -> State8
-State7 --> State26
+State7 --> State19
 
 State8 -> State9
-State8 --> State27
+State8 --> State20
 
 State9 -> State10
-State9 --> State28
+State9 --> State21
 
 State10 -> State11
-State10 --> State29
+State10 --> State22
 
 State11 -> State12
-State11 --> State30
+State11 --> State23
 
 State12 -> State13
-State12 --> State31
+State12 --> State24
 
-State13 -> State14
-
-State14 -> State15
-State14 --> State32
-
-State15 -> State16
-State15 --> State33
-
-State16 -> State17
-State16 -> State34
-
-State17 -> State18
-
-State18 -> State19
-State18 --> State35
-
-State19 -> State20
-State19 --> State36
-
+State14  --> [*]
+State15  --> [*]
+State16 --> [*]
+State17 --> [*]
+State18 --> [*]
+State19 --> [*]
+State20  --> [*]
 State21  --> [*]
-State22  --> [*]
+State22 --> [*]
 State23 --> [*]
 State24 --> [*]
-State25 --> [*]
-State26 --> [*]
-State27  --> [*]
-State28  --> [*]
-State29 --> [*]
-State30 --> [*]
-State31 --> [*]
-State32 --> [*]
-State33 --> [*]
-State34 --> [*]
-State35 --> [*]
-State36 --> [*]
 
-State20 --> [*]
+State13 --> [*]
 
 @enduml
