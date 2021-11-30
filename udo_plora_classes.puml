@@ -27,7 +27,7 @@ class "Регистрация направлений" as SpecClass2 {
 {method}+Исправить направление (P_UDO_PLORAD_UPDATE)
 }
 
-class "Сетевые задания" as SpecClass3 {
+class "Сетевые задания регистрации" as SpecClass3 {
 ..Пользовательские действия..
 {method}+Просмотр (P_UDO_PLORAN_VIEW)
 {method}+Результаты (P_UDO_PLORAN_RES)
