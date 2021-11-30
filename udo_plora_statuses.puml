@@ -14,7 +14,7 @@ state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
 [*] --> State0
 State0 -> State1
 State0 -> State2
-State0 -> State5
+State0 --> State5
 
 State1 -> State2
 State1 --> State4
