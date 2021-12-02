@@ -3,19 +3,12 @@ hide empty description
 
 state "Успешный ход проверки ФЛК" as Saccess #LightGray;line.dotted;line:LightGray {
     state "1 - Требуется ФЛК" as State1
-    state "2 - Постановка документов\nв очередь на ФЛК" as State2
-    state "3 - Документы\nв очереди" as State3
-    state "4 - Постановка события\nзапроса ФЛК в очередь" as State4
-    state "5 - Событие запроса\nФЛК в очереди" as State5
-    state "6 - Событие запроса\nФЛК отправлено\nв сервис ФЛК" as State6
-    state "7 - Получен результат\nпроверки ФЛК" as State7
+    state "2 - В обработке ФЛК" as State2  
+    state "3 - Проверка пройдена" as State3
 }
-state "Ошибки проверки ФЛК" as Errors #LightGray;line.dotted;line:LightGray {
-    state "8 - Ошибка\nпостановки документов\nв очередь на ФЛК" as State8
-    state "9 - Ошибка\nотправки документов" as State9
-    state "10 - Ошибка\nпостановки события\nзапроса ФЛК в очередь" as State10
-    state "11 - Ошибка\nотправки события\nзапроса ФЛК" as State11
-    state "12 - Ошибка\nполучения результата\nпроверки ФЛК" as State12
+state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
+    state "4 - Проверка не пройдена" as State4
+    state "5 - Ошибка ФЛК" as State5
 }
 
 [*] --> State1
@@ -23,26 +16,12 @@ state "Ошибки проверки ФЛК" as Errors #LightGray;line.dotted;li
 State1 -> State2
 
 State2 -> State3
-State2 --> State8
+State2 -> State4
+State2 --> State5
 
-State3 -> State4
-State3 -> State9
+State4 --> [*]
+State5 --> [*]
 
-State4 -> State5
-State4 -> State10
-
-State5 -> State6
-State5 --> State11
-
-State6 -> State7
-State6 --> State12
-
-State8 --> [*]
-State9 --> [*]
-State10 --> [*]
-State11 --> [*]
-State12 --> [*]
-
-State7 --> [*]
+State3 --> [*]
 
 @enduml
