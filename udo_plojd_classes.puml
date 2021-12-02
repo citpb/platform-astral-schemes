@@ -27,7 +27,7 @@
  {method}+Исправить направление (P_UDO_PLOJDF_UPDATE)
  }
 
- class "Сетевые задания" as SpecClass3 {
+ class "Сетевые задания отчётов" as SpecClass3 {
  ..Пользовательские действия..
  {method}+Просмотр (P_UDO_PLOJDN_VIEW)
  {method}+Результаты (P_UDO_PLOJDN_RES)
