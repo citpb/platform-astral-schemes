@@ -1,0 +1,41 @@
+@startuml
+scale 100 width
+scale 260 height
+
+hide empty description
+state "Успешный ход документооборота" as Saccess #LightGray;line.dotted;line:LightGray {
+    state "1 – Формирование" as State1
+    state "2 - В обработке" as State2
+    state "3 - Требуется подписать документы" as State3
+    state "4 - Требуется дешифровать документы" as State4
+    state "5 - Требуется ответить на извещение" as State5
+    state "6 - Завершен" as State6
+}
+state "Ошибки документооборота" as Errors #LightGray;line.dotted;line:LightGray {
+    state "7 - Ошибка" as State7
+}
+
+[*] --> State1
+
+State1 -> State2
+
+State2 -> State6
+
+State2 -> State7
+
+State1 -> State7
+
+State6 -> [*]
+
+State7 --> [*]
+
+State2 -> State3
+State3 --> State2
+
+State2 -> State4
+State4 --> State2
+
+State2 -> State5
+State5 --> State2
+
+@enduml
