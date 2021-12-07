@@ -10,12 +10,12 @@ state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
     state "4 - Ошибка ПФ" as State4
 }
 
-[*] --> State1
+[*] -> State1
 
 State1 -> State2
 
 State2 -> State3
-State2 -> State4
+State2 --> State4
 
 State4 --> [*]
 
