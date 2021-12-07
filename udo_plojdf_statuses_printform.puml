@@ -1,0 +1,24 @@
+@startuml
+hide empty description
+
+state "Успешный ход получения ПФ" as Saccess #LightGray;line.dotted;line:LightGray {
+    state "1 - Требуется ПФ" as State1
+    state "2 - В обработке ПФ" as State2  
+    state "3 - ПФ получена" as State3
+}
+state "Ошибки" as Errors #LightGray;line.dotted;line:LightGray {
+    state "4 - Ошибка ПФ" as State4
+}
+
+[*] --> State1
+
+State1 -> State2
+
+State2 -> State3
+State2 -> State4
+
+State4 --> [*]
+
+State3 --> [*]
+
+@enduml
